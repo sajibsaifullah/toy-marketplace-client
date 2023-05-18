@@ -9,6 +9,8 @@ function App() {
       <div className="text-center mt-4">
         <button className="btn btn-primary">Button</button>
         <button className="btn btn-secondary">Button</button>
+        <br />
+        <button className="btn btn-primary">test</button>
       </div>
     </>
   );
