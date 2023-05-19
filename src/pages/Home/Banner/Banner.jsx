@@ -10,7 +10,7 @@ const Banner = () => {
       <div className="hero-content text-center text-neutral-content">
         <div className="w-3/4">
           <h1 className="mb-5 text-5xl font-bold">
-            All SupperHeroes Are There
+            All SuperHeroes Are There
           </h1>
           <p className="mb-5">
             Superhero toys, inspired by iconic characters from comics and
