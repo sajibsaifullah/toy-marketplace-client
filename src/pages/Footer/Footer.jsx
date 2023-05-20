@@ -14,6 +14,7 @@ const Footer = () => {
             <FaInstagram className="w-6 h-6" />
             <FaLinkedin className="w-6 h-6" />
           </div>
+          <p className="mt-2">© 2023 ToyHouse. All rights reserved.</p>
         </div>
         <div>
           <span className="footer-title">Services</span>
