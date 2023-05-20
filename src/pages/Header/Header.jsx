@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import logo from "../../../public/toy-house-logo.png";
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProviders";
 
@@ -46,7 +45,7 @@ const Header = () => {
             </ul>
           </div>
           <a className="btn btn-ghost normal-case text-2xl font-bold">
-            <img className="w-[20%] rounded-lg mr-1" src={logo} alt="" />
+            <img className="w-[20%] rounded-lg mr-1" src="https://i.ibb.co/KzST590/toy-house-logo.png" alt="logo" />
             ToyHouse
           </a>
         </div>

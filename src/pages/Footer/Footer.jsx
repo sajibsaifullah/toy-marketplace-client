@@ -1,4 +1,4 @@
-import logo from "../../../public/toy-house-logo.png";
+
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
@@ -6,7 +6,7 @@ const Footer = () => {
     <div className="container mx-auto">
       <footer className="footer p-10 bg-base-200 text-base-content">
         <div>
-          <img src={logo} alt="logo" />
+          <img src="https://i.ibb.co/KzST590/toy-house-logo.png" alt="logo" />
           <p className="text-xl font-bold">Toy House Ltd.</p>
           <div className="flex gap-1">
             <FaFacebook className="w-6 h-6" />
