@@ -1,7 +1,18 @@
 import { Link } from "react-router-dom";
 import logo from "../../../public/toy-house-logo.png";
+import { useContext } from "react";
+import { AuthContext } from "../../Providers/AuthProviders";
 
 const Header = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+  console.log(user)
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {})
+      .catch((error) => console.log(error));
+  };
   return (
     <div className="container mx-auto">
       <div className="navbar bg-base-200">
@@ -49,12 +60,23 @@ const Header = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-            <div className="w-10 rounded-full">
-              <img src="https://shorturl.at/kT129" />
-            </div>
-          </label>
-          <Link className="btn btn-primary" to='/login'>Login</Link>
+          {user?.email ? (
+            <>
+              <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                <div title={user?.displayName} className="w-10 rounded-full">
+                  {/* <img src="https://shorturl.at/kT129" /> */}
+                  <img src={user?.photoURL} alt="https://shorturl.at/kT129" />
+                </div>
+              </label>
+              <Link className="btn btn-primary" onClick={handleLogOut}>
+                Log Out
+              </Link>
+            </>
+          ) : (
+            <Link className="btn btn-primary" to="/login">
+              Login
+            </Link>
+          )}
         </div>
       </div>
     </div>
