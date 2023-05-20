@@ -1,4 +1,5 @@
-import logo from '../../../public/toy-house-logo.png'
+import { Link } from "react-router-dom";
+import logo from "../../../public/toy-house-logo.png";
 
 const Header = () => {
   return (
@@ -26,29 +27,25 @@ const Header = () => {
               tabIndex={0}
               className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
             >
-              <li><a>Home</a></li>
-              <li><a>All Toys</a></li>
-              <li><a>My Toys</a></li>
-              <li><a>Add A Toy</a></li>
-              <li><a>Blogs</a></li>
-              <li><a>Login</a></li>
+              <Link to="/">Home</Link>
+              <Link to="/allToys">All Toys</Link>
+              <Link to="/myToys">My Toys</Link>
+              <Link to="/addAToys">Add A Toy</Link>
+              <Link to="/blogs">Blogs</Link>
             </ul>
           </div>
           <a className="btn btn-ghost normal-case text-2xl font-bold">
-            <img className='w-[20%] rounded-lg mr-1' src={logo} alt="" />
+            <img className="w-[20%] rounded-lg mr-1" src={logo} alt="" />
             ToyHouse
-            </a>
+          </a>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
-            <li><a>Home</a></li>
-            <li><a>All Toys</a></li>
-            <li><a>My Toys</a></li>
-            <li><a>Add A Toy</a></li>
-            <li><a>Blogs</a></li>
-            <li><a>Login</a></li>
-
-            
+          <ul className="menu menu-horizontal px-1 flex justify-center items-center gap-4">
+            <Link to="/">Home</Link>
+            <Link to="/allToys">All Toys</Link>
+            <Link to="/myToys">My Toys</Link>
+            <Link to="/addAToys">Add A Toy</Link>
+            <Link to="/blogs">Blogs</Link>
           </ul>
         </div>
         <div className="navbar-end">
