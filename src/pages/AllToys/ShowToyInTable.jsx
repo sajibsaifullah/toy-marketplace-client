@@ -9,7 +9,7 @@ const ShowToyInTable = ({ toy }) => {
   const { user } = useContext(AuthContext);
 
   const handleViewDetails = (id) => {
-    console.log(id);
+    // console.log(id);
     navigate('/toyDetails')
     localStorage.setItem('toyId', JSON.stringify(id))
     if (!user?.email) {
