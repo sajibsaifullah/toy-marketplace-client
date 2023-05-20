@@ -17,13 +17,32 @@ const MyToys = () => {
       });
   }, [url]);
 
+  const handleDelete = (id) => {
+    const proceed = confirm("Are you sure tou want to delete");
+
+    if (proceed) {
+      fetch(`http://localhost:5000/myToys/${id}`, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          if (data.deletedCount > 0) {
+            alert("deleted successful");
+            const remaining = myToys.filter((myToy) => myToy._id !== id);
+            setMyToys(remaining);
+          }
+        });
+    }
+  };
+
   return (
-      <div className="container mx-auto mt-4">
+    <div className="container mx-auto mt-4">
       <div className="overflow-scroll w-full">
         <table className="table w-full text-center">
           {/* head */}
           <thead>
-            <tr>              
+            <tr>
               <th>Seller</th>
               <th>Toy Name</th>
               <th>Price</th>
@@ -33,9 +52,14 @@ const MyToys = () => {
             </tr>
           </thead>
           <tbody>
-            {
-                myToys.map(myToy => <ShowMyToys key={myToy._id} myToy={myToy}></ShowMyToys>)
-            }
+            {myToys.map((myToy) => (
+              <ShowMyToys 
+                key={myToy._id} 
+                myToy={myToy}
+                handleDelete={handleDelete}
+
+              ></ShowMyToys>
+            ))}
           </tbody>
         </table>
       </div>

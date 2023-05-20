@@ -1,5 +1,7 @@
-const ShowMyToys = ({ myToy }) => {
-  const { name, sellerName, price, quantity } = myToy;
+import { Link } from "react-router-dom";
+
+const ShowMyToys = ({ myToy, handleDelete }) => {
+  const { _id, name, sellerName, price, quantity } = myToy;
   console.log(myToy);
   return (
     <tr>
@@ -8,10 +10,13 @@ const ShowMyToys = ({ myToy }) => {
       <td>${price}/pcs</td>
       <td>{quantity} pcs</td>
       <td>
-        <button className="btn btn-info">Update</button>
+        {/* <Link to='/updateToy' className="btn btn-info">Update</Link> */}
+        <Link to={`/updateToy/${_id}`} className="btn btn-info">Update</Link>
       </td>
       <td>
-        <button className="btn btn-error">Delete</button>
+        <button onClick={() => handleDelete(_id)} className="btn btn-error">
+          Delete
+        </button>
       </td>
     </tr>
   );
