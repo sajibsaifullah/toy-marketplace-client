@@ -54,6 +54,7 @@ const Header = () => {
               <img src="https://shorturl.at/kT129" />
             </div>
           </label>
+          <Link className="btn btn-primary" to='/login'>Login</Link>
         </div>
       </div>
     </div>
