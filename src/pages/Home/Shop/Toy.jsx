@@ -1,7 +1,22 @@
+import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../../../Providers/AuthProviders";
+
 const Toy = ({ toy }) => {
   const { picture, name, price, rating } = toy || {};
+  const navigate = useNavigate();
+  const {user} = useContext(AuthContext)
 
 //   console.log(toy)
+
+const handleViewDetails = () => {
+  navigate('/viewDetails')
+  if(!user?.email){
+    navigate('/login')
+    alert('You have to log in first to view details')
+  }
+  
+}
 
   return (
     <div className="card w-full bg-base-100 shadow-xl">
@@ -19,7 +34,7 @@ const Toy = ({ toy }) => {
           <p>Ratings: {rating}</p>
         </div>
         <div className="card-actions">
-          <button className="btn btn-primary">View Details</button>
+          <button onClick={handleViewDetails} className="btn btn-primary">View Details</button>
         </div>
       </div>
     </div>

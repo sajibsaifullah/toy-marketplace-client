@@ -9,6 +9,7 @@ import Blogs from "../pages/Blogs/Blogs";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Login/Register";
 import PrivateRoutes from "./PrivateRoutes";
+import ViewDetails from "../pages/ViewDetails/ViewDetails";
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
       {
         path: "addAToys",
         element: <AddAToys></AddAToys>,
+      },
+      {
+        path: 'viewDetails',
+        element: <ViewDetails></ViewDetails>
       },
       {
         path: "blogs",
