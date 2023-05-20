@@ -8,42 +8,47 @@ import AddAToys from "../pages/AddAToys/AddAToys";
 import Blogs from "../pages/Blogs/Blogs";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Login/Register";
+import PrivateRoutes from "./PrivateRoutes";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
-    errorElement: <ErrorPage /> ,
+    errorElement: <ErrorPage />,
     children: [
-        {
-            path: '/',
-            element: <Home></Home>
-        },
-        {
-          path: 'allToys',
-          element: <AllToys></AllToys>
-        },
-        {
-          path: 'myToys',
-          element: <MyToys></MyToys>
-        },
-        {
-          path: 'addAToys',
-          element: <AddAToys></AddAToys>
-        },
-        {
-          path: 'blogs',
-          element: <Blogs></Blogs>
-        },
-        {
-          path: 'login',
-          element: <Login></Login>
-        },
-        {
-          path: 'register',
-          element: <Register></Register>
-        }
-    ]
+      {
+        path: "/",
+        element: <Home></Home>,
+      },
+      {
+        path: "allToys",
+        element: <AllToys></AllToys>,
+      },
+      {
+        path: "myToys",
+        element: (
+          <PrivateRoutes>
+            <MyToys></MyToys>
+          </PrivateRoutes>
+        ),
+      },
+      {
+        path: "addAToys",
+        element: <AddAToys></AddAToys>,
+      },
+      {
+        path: "blogs",
+        element: <Blogs></Blogs>,
+      },
+      {
+        path: "login",
+        element: <Login></Login>,
+      },
+      {
+        path: "register",
+        element: <Register></Register>,
+      },
+    ],
   },
 ]);
 

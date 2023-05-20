@@ -20,6 +20,7 @@ const ShopByCategory = () => {
   }
   return (
     <div className="text-center mt-12">
+      <h1 className="text-3xl font-bold my-4">Shop By Category</h1>
       <div className="btn-group btn-group-vertical lg:btn-group-horizontal mb-4">
         <Link onClick={() => handleTab('Marvel')} className="btn btn-active w-32">Marvel</Link>
         <Link onClick={() => handleTab('StarWars')} className="btn btn-secondary w-32">Star Wars</Link>
