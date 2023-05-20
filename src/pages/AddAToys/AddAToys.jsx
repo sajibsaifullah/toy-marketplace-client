@@ -1,4 +1,8 @@
+import { useContext } from "react";
+import { AuthContext } from "../../Providers/AuthProviders";
+
 const AddAToys = () => {
+  const { user } = useContext(AuthContext);
   const handleAddAToy = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -6,7 +10,8 @@ const AddAToys = () => {
     const picture = form.picture.value;
     const name = form.name.value;
     const sellerName = form.sellerName.value;
-    const email = form.email.value;
+    // const email = form.email.value;
+    const email = user?.email;
     const subCategory = form.subCategory.value;
     const price = form.price.value;
     const ratings = form.ratings.value;
@@ -25,9 +30,9 @@ const AddAToys = () => {
       description,
     };
 
-    console.log(toy)
+    console.log(toy);
 
-    fetch("http://localhost:5000/allToys", {
+    fetch("http://localhost:5000/myToys", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -51,12 +56,14 @@ const AddAToys = () => {
           type="text"
           name="picture"
           placeholder="Picture URL"
+          required
           className="input input-bordered w-full max-w-xs mr-2"
         />
         <input
           type="text"
           name="name"
           placeholder="Name"
+          required
           className="input input-bordered w-full max-w-xs"
         />
         <br />
@@ -64,12 +71,15 @@ const AddAToys = () => {
           type="text"
           name="sellerName"
           placeholder="Seller Name"
+          required
           className="input input-bordered w-full max-w-xs mr-2 mt-2"
         />
         <input
           type="text"
           name="email"
+          defaultValue={user?.email}
           placeholder="Seller Email"
+          required
           className="input input-bordered w-full max-w-xs"
         />
         <br />
@@ -77,12 +87,14 @@ const AddAToys = () => {
           type="text"
           name="subCategory"
           placeholder="Sub-Category"
+          required
           className="input input-bordered w-full max-w-xs mr-2 mt-2"
         />
         <input
           type="text"
           name="price"
           placeholder="Price"
+          required
           className="input input-bordered w-full max-w-xs"
         />
         <br />
@@ -90,12 +102,14 @@ const AddAToys = () => {
           type="text"
           name="ratings"
           placeholder="Ratings"
+          required
           className="input input-bordered w-full max-w-xs mr-2 mt-2"
         />
         <input
           type="text"
           name="quantity"
           placeholder="Available Quantity"
+          required
           className="input input-bordered w-full max-w-xs"
         />
         <br />
