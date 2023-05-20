@@ -10,7 +10,8 @@ const ShowToyInTable = ({ toy }) => {
 
   const handleViewDetails = (id) => {
     console.log(id);
-    navigate('/viewDetails')
+    navigate('/toyDetails')
+    localStorage.setItem('toyId', JSON.stringify(id))
     if (!user?.email) {
       navigate("/login");
       alert("You have to log in first to view details");

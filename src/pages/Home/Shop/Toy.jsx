@@ -3,14 +3,15 @@ import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Providers/AuthProviders";
 
 const Toy = ({ toy }) => {
-  const { picture, name, price, rating } = toy || {};
+  const {_id, picture, name, price, rating } = toy || {};
   const navigate = useNavigate();
   const {user} = useContext(AuthContext)
 
 //   console.log(toy)
 
-const handleViewDetails = () => {
-  navigate('/viewDetails')
+const handleViewDetails = (id) => {
+  navigate('/toyDetails');
+  localStorage.setItem('toyId', JSON.stringify(id))
   if(!user?.email){
     navigate('/login')
     alert('You have to log in first to view details')
@@ -34,7 +35,7 @@ const handleViewDetails = () => {
           <p>Ratings: {rating}</p>
         </div>
         <div className="card-actions">
-          <button onClick={handleViewDetails} className="btn btn-primary">View Details</button>
+          <button onClick={()=>handleViewDetails(_id)} className="btn btn-primary">View Details</button>
         </div>
       </div>
     </div>
