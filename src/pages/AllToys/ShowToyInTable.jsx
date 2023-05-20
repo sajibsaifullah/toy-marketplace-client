@@ -17,7 +17,7 @@ const ShowToyInTable = ({ toy }) => {
     }
   };
 
-  console.log(toy);
+//   console.log(toy);
   return (
     <tr>
       <td>{sellerName}</td>
