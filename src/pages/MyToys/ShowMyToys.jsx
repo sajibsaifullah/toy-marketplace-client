@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const ShowMyToys = ({ myToy, handleDelete }) => {
   const { _id, name, sellerName, price, quantity } = myToy;
-  console.log(myToy);
+  // console.log(myToy);
   return (
     <tr>
       <td>{sellerName}</td>
