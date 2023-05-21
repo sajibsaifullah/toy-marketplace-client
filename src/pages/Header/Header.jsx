@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProviders";
+import { FaSignOutAlt } from "react-icons/fa";
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -67,9 +68,12 @@ const Header = () => {
                   <img src={user?.photoURL} alt="https://shorturl.at/kT129" />
                 </div>
               </label>
-              <Link className="btn btn-primary" onClick={handleLogOut}>
-                Log Out
+              <Link onClick={handleLogOut} className="btn btn-square btn-error w-8 h-8">
+                <FaSignOutAlt></FaSignOutAlt>
               </Link>
+              {/* <Link className="btn btn-primary" onClick={handleLogOut}>
+                Log Out
+              </Link> */}
             </>
           ) : (
             <Link className="btn btn-primary" to="/login">
