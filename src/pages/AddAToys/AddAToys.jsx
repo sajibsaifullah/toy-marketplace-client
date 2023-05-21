@@ -32,7 +32,7 @@ const AddAToys = () => {
 
     console.log(toy);
 
-    fetch("http://localhost:5000/myToys", {
+    fetch("https://toy-marketplace-server-orcin.vercel.app/myToys", {
       method: "POST",
       headers: {
         "content-type": "application/json",

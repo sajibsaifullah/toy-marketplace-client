@@ -5,7 +5,7 @@ const AllToys = () => {
   const [toys, setToys] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/allToys")
+    fetch("https://toy-marketplace-server-orcin.vercel.app/allToys")
       .then((res) => res.json())
       .then((data) => {
         setToys(data);
@@ -18,7 +18,7 @@ const AllToys = () => {
         <table className="table w-full text-center">
           {/* head */}
           <thead>
-            <tr>              
+            <tr>
               <th>Seller</th>
               <th>Toy Name</th>
               <th>Sub Category</th>

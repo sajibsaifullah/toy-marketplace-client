@@ -8,7 +8,7 @@ const MyToys = () => {
 
   // console.log(user.email)
 
-  const url = `http://localhost:5000/myToys?email=${user?.email}`;
+  const url = `https://toy-marketplace-server-orcin.vercel.app/myToys?email=${user?.email}`;
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
@@ -21,7 +21,7 @@ const MyToys = () => {
     const proceed = confirm("Are you sure tou want to delete");
 
     if (proceed) {
-      fetch(`http://localhost:5000/myToys/${id}`, {
+      fetch(`https://toy-marketplace-server-orcin.vercel.app/myToys/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
@@ -53,11 +53,10 @@ const MyToys = () => {
           </thead>
           <tbody>
             {myToys.map((myToy) => (
-              <ShowMyToys 
-                key={myToy._id} 
+              <ShowMyToys
+                key={myToy._id}
                 myToy={myToy}
                 handleDelete={handleDelete}
-
               ></ShowMyToys>
             ))}
           </tbody>

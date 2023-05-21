@@ -49,7 +49,10 @@ const router = createBrowserRouter([
             <UpdateToy></UpdateToy>
           </PrivateRoutes>
         ),
-        loader: ({params}) => fetch(`http://localhost:5000/myToys/${params.id}`)
+        loader: ({ params }) =>
+          fetch(
+            `https://toy-marketplace-server-orcin.vercel.app/myToys/${params.id}`
+          ),
       },
       {
         path: "toyDetails",
@@ -58,7 +61,8 @@ const router = createBrowserRouter([
             <ToyDetails></ToyDetails>
           </PrivateRoutes>
         ),
-        loader: () => fetch("http://localhost:5000/allToys"),
+        loader: () =>
+          fetch("https://toy-marketplace-server-orcin.vercel.app/allToys"),
       },
       {
         path: "blogs",
