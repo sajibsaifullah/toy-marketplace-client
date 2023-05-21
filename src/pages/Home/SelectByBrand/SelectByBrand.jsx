@@ -1,7 +1,7 @@
 const SelectByBrand = () => {
   return (
     <div className="container mx-auto text-center my-8">
-      <h2 className="text-3xl font-bold mb-4">SelectByBrand</h2>
+      <h2 className="text-3xl font-bold mb-4">Select By Brand</h2>
      <div className="grid lg:grid-cols-4 gap-4">
      <div className="card w-full">
         <figure>
