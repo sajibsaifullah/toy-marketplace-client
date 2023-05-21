@@ -1,9 +1,11 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import SocialLogin from "./SocialLogin";
 import { AuthContext } from "../../Providers/AuthProviders";
 
 const Login = () => {
+  const [error, setError] = useState('');
+
   const { signIn } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
@@ -26,6 +28,7 @@ const Login = () => {
       })
       .catch((error) => {
         console.log(error)
+        setError('Invalid email or password');
       });
   };
 
@@ -74,6 +77,7 @@ const Login = () => {
                 />
               </div>
             </form>
+            <p className="text-center text-red-600">{error}</p>
             <p className="my-4 text-center">
               New to Toy House{" "}
               <Link className="text-orange-600 font-bold" to="/register">
