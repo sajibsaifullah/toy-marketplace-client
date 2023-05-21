@@ -1,8 +1,11 @@
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProviders";
 import { useLoaderData } from "react-router-dom";
+import useTitle from "../../hooks/useTitle";
 
 const UpdateToy = () => {
+  useTitle('UpdateToy');
+  
   const toys = useLoaderData();
 
   const {

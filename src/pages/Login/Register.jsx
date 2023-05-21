@@ -2,9 +2,12 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProviders";
 import SocialLogin from "./SocialLogin";
+import useTitle from "../../hooks/useTitle";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
+
+  useTitle('Register');
 
   const handleSignUp = (event) => {
     event.preventDefault();

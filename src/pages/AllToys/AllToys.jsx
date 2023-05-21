@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import ShowToyInTable from "./ShowToyInTable";
+import useTitle from "../../hooks/useTitle";
 
 const AllToys = () => {
   const [toys, setToys] = useState([]);
+  useTitle('AllToys');
 
   useEffect(() => {
     fetch("https://toy-marketplace-server-orcin.vercel.app/allToys")

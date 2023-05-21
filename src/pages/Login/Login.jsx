@@ -2,6 +2,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import SocialLogin from "./SocialLogin";
 import { AuthContext } from "../../Providers/AuthProviders";
+import useTitle from "../../hooks/useTitle";
 
 const Login = () => {
   const [error, setError] = useState('');
@@ -9,6 +10,8 @@ const Login = () => {
   const { signIn } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
+
+  useTitle('Login');
 
   const from = location.state?.from?.pathname || "/";
 
